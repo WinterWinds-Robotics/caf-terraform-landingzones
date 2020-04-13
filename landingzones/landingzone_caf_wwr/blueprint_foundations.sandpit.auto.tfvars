@@ -4,8 +4,8 @@
 global_settings = {
     #specifies the set of locations you are going to use in this landing zone
     location_map = {
-        region1   = "southeastasia"
-        region2   = "eastasia"
+        region1   = "eastus"
+        region2   = "westus"
     }
 
     #naming convention to be used as defined in naming convention module, accepted values are cafclassic, cafrandom, random, passthrough
@@ -13,11 +13,11 @@ global_settings = {
 
     #Set of tags for core operations
     tags_hub = {
-        environment     = "DEV"
-        owner           = "CAF"
+        environment     = "PROD"
+        owner           = "GHC3"
         deploymentType  = "Terraform"
-        costCenter      = "1664"
-        BusinessUnit    = "SHARED"
+        costCenter      = "GHC3"
+        BusinessUnit    = "GHC3"
         DR              = "NON-DR-ENABLED"
     }
 
@@ -25,11 +25,11 @@ global_settings = {
     resource_groups_hub = {
         HUB-CORE-SEC    = {
             name = "hub-core-sec"
-            location = "southeastasia"
+            location = "eastus"
         }
         HUB-OPERATIONS  = {
             name = "hub-operations"
-            location = "southeastasia"
+            location = "eastus"
         }
     }
 }
@@ -116,20 +116,20 @@ governance_settings = {
     cant_create_ip_spoke    = false 
     managed_disks_only      = true
     restrict_locations      = false
-    list_of_allowed_locs    = ["southeastasia", "eastasia"]
+    list_of_allowed_locs    = ["eastus", "westus"]
     restrict_supported_svc  = false
     list_of_supported_svc   = ["Microsoft.Network/publicIPAddresses", "Microsoft.Compute/disks"]
-    msi_location            = "southeastasia"
+    msi_location            = "eastus"
     }
 }
 
 ## security 
 security_settings = {
     #Azure Security Center Configuration 
-    enable_security_center = false
+    enable_security_center = true
     security_center = {
-        contact_email   = "email@email.com" 
-        contact_phone   = "9293829328"
+        contact_email   = "repadmin@globalhealthc3.com" 
+        contact_phone   = "9706321890"
     }
     #Enables Azure Sentinel on the Log Analaytics repo
     enable_sentinel = true
